@@ -16,3 +16,9 @@ grep -Fq '<loc>https://ermeyasgirma.github.io/</loc>' sitemap.xml
 grep -Fq 'actions/deploy-pages@v4' .github/workflows/deploy-pages.yml
 grep -Fq 'pages: write' .github/workflows/deploy-pages.yml
 grep -Fxq 'google-site-verification: googlee63064bd8112f91c.html' googlee63064bd8112f91c.html
+grep -Fq 'https://github.com/ermeyasgirma/jraft' index.html
+grep -Fq 'https://github.com/ermeyasgirma/chess-analysis-dashboard' index.html
+grep -Fq 'https://github.com/ermeyasgirma/Deliberative-Social-Media' index.html
+grep -Fq 'https://github.com/ermeyasgirma/JGAL' index.html
+grep -Fq 'https://github.com/ermeyasgirma/Encrypted-Chat-Server' index.html
+grep -Fq 'https://github.com/ermeyasgirma/search_command' index.html
