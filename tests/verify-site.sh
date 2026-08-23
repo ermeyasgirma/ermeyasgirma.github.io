@@ -15,3 +15,4 @@ grep -Fq 'Sitemap: https://ermeyasgirma.github.io/sitemap.xml' robots.txt
 grep -Fq '<loc>https://ermeyasgirma.github.io/</loc>' sitemap.xml
 grep -Fq 'actions/deploy-pages@v4' .github/workflows/deploy-pages.yml
 grep -Fq 'pages: write' .github/workflows/deploy-pages.yml
+grep -Fxq 'google-site-verification: googlee63064bd8112f91c.html' googlee63064bd8112f91c.html
