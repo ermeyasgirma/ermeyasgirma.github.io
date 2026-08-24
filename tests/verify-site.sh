@@ -34,3 +34,22 @@ grep -Fq 'alt="Ermeyas Girma"' index.html
 test -f PXL_20250814_071235023.MP.jpeg
 grep -Fq 'linear-gradient' styles.css
 grep -Fq 'object-fit: cover' styles.css
+grep -Fq "Hi, I'm Ermeyas Girma, currently working at Roku as a Senior Software Engineer." index.html
+grep -Fq 'I previously worked at Rapita Systems as a software engineer intern, developing a Perl-based compiler to provide software verification for embedded aerospace systems. Before this, I studied Computer Science at the University of Cambridge, Corpus Christi College.' index.html
+grep -Fq 'I enjoy hiking, lifting weights, playing chess, travelling, reading fantasy books and working on fun coding projects.' index.html
+! grep -Fq 'driven by curiosity about how technology works' index.html
+python3 - <<'PY'
+from pathlib import Path
+
+page = Path("index.html").read_text(encoding="utf-8")
+links = [
+    '<a href="mailto:ermeyasgirma72@gmail.com">Email</a>',
+    '<a href="ermeyas_resume.pdf" target="_blank" rel="noopener">Resume</a>',
+    '<a href="https://github.com/ermeyasgirma">GitHub</a>',
+    '<a href="https://www.linkedin.com/in/ermeyas-girma-4b7386199/">LinkedIn</a>',
+]
+positions = [page.index(link) for link in links]
+assert positions == sorted(positions)
+PY
+grep -Fq 'margin-left: max(2rem, calc((100% - 58rem) / 2));' styles.css
+grep -Fq 'margin-right: auto;' styles.css
