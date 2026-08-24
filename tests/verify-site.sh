@@ -51,5 +51,11 @@ links = [
 positions = [page.index(link) for link in links]
 assert positions == sorted(positions)
 PY
-grep -Fq 'margin-left: max(2rem, calc((100% - 58rem) / 2));' styles.css
+! grep -Fq 'margin-left: max(2rem, calc((100% - 58rem) / 2));' styles.css
 grep -Fq 'margin-right: auto;' styles.css
+grep -Fq 'margin-left: max(2rem, calc((100% - 72rem) / 2));' styles.css
+grep -Fq 'align-items: start;' styles.css
+grep -Fq '.hero-copy {' styles.css
+grep -Fq 'padding-top: 1rem;' styles.css
+grep -Fq '@media (max-width: 30rem)' styles.css
+grep -Fq 'padding-top: 0;' styles.css

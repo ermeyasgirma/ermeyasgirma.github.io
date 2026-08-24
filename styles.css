@@ -18,7 +18,7 @@ body {
 .page-shell {
   width: min(100% - 2rem, 44rem);
   margin-right: auto;
-  margin-left: max(2rem, calc((100% - 58rem) / 2));
+  margin-left: max(2rem, calc((100% - 72rem) / 2));
   padding: 5rem 0;
 }
 
@@ -26,9 +26,13 @@ body {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   border-bottom: 1px solid rgb(255 255 255 / 0.35);
   padding-bottom: 3rem;
+}
+
+.hero-copy {
+  padding-top: 1rem;
 }
 
 .portrait {
@@ -114,6 +118,10 @@ section {
 @media (max-width: 30rem) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding-top: 0;
   }
 
   .page-shell {
