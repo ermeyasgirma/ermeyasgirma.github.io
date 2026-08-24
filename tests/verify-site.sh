@@ -64,3 +64,26 @@ from pathlib import Path
 desktop_css = Path("styles.css").read_text(encoding="utf-8").split("@media", 1)[0]
 assert ".hero-copy {\n  padding-top: 0;\n}" in desktop_css
 PY
+test -f projects.html
+test -f art.html
+for page in index.html projects.html art.html; do
+  grep -Fq 'aria-label="Primary navigation"' "$page"
+  grep -Fq 'href="index.html">Home</a>' "$page"
+  grep -Fq 'href="projects.html">Projects</a>' "$page"
+  grep -Fq 'href="art.html">Art</a>' "$page"
+  grep -Fq '© Ermeyas Girma. All rights reserved.' "$page"
+done
+grep -Fq 'href="index.html" aria-current="page">Home</a>' index.html
+grep -Fq 'href="projects.html" aria-current="page">Projects</a>' projects.html
+grep -Fq 'href="art.html" aria-current="page">Art</a>' art.html
+grep -Fq 'Java implementation of the Raft consensus algorithm.' projects.html
+grep -Fq 'Chess.com game-analysis dashboard.' projects.html
+grep -Fq 'Cambridge second-year group project for a deliberative social-media platform.' projects.html
+grep -Fq 'Java genetic-algorithm library.' projects.html
+grep -Fq 'Travel photographs coming soon.' art.html
+! grep -Fq '<img' art.html
+grep -Fq 'https://ermeyasgirma.github.io/projects.html' sitemap.xml
+grep -Fq 'https://ermeyasgirma.github.io/art.html' sitemap.xml
+grep -Fq '.site-nav {' styles.css
+grep -Fq '.project-grid {' styles.css
+grep -Fq '.site-footer {' styles.css
