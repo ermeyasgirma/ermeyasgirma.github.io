@@ -22,7 +22,13 @@ grep -Fq 'https://github.com/ermeyasgirma/Deliberative-Social-Media' index.html
 grep -Fq 'https://github.com/ermeyasgirma/JGAL' index.html
 ! grep -Fq 'https://github.com/ermeyasgirma/Encrypted-Chat-Server' index.html
 ! grep -Fq 'https://github.com/ermeyasgirma/search_command' index.html
-grep -Fq 'GitHub: https://github.com/ermeyasgirma' index.html
+grep -Fq '<a href="https://github.com/ermeyasgirma">GitHub</a>' index.html
+grep -Fq '<a href="mailto:ermeyasgirma72@gmail.com">Email</a>' index.html
+grep -Fq '<a href="ermeyas_resume.pdf" target="_blank" rel="noopener">Resume</a>' index.html
+test -f ermeyas_resume.pdf
+! grep -Fq 'Hello, I' index.html
+! grep -Fq '<h1>Ermeyas Girma</h1>' index.html
+! grep -Fq 'Senior Software Engineer</p>' index.html
 grep -Fq 'src="PXL_20250814_071235023.MP.jpeg"' index.html
 grep -Fq 'alt="Ermeyas Girma"' index.html
 test -f PXL_20250814_071235023.MP.jpeg
