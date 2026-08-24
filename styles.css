@@ -32,7 +32,7 @@ body {
 }
 
 .hero-copy {
-  padding-top: 1rem;
+  padding-top: 0;
 }
 
 .portrait {
@@ -118,10 +118,6 @@ section {
 @media (max-width: 30rem) {
   .hero {
     grid-template-columns: 1fr;
-  }
-
-  .hero-copy {
-    padding-top: 0;
   }
 
   .page-shell {

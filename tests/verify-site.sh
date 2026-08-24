@@ -56,6 +56,10 @@ grep -Fq 'margin-right: auto;' styles.css
 grep -Fq 'margin-left: max(2rem, calc((100% - 72rem) / 2));' styles.css
 grep -Fq 'align-items: start;' styles.css
 grep -Fq '.hero-copy {' styles.css
-grep -Fq 'padding-top: 1rem;' styles.css
 grep -Fq '@media (max-width: 30rem)' styles.css
-grep -Fq 'padding-top: 0;' styles.css
+python3 - <<'PY'
+from pathlib import Path
+
+desktop_css = Path("styles.css").read_text(encoding="utf-8").split("@media", 1)[0]
+assert ".hero-copy {\n  padding-top: 0;\n}" in desktop_css
+PY
