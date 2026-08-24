@@ -95,3 +95,15 @@ grep -Fq 'font-size: 1.125rem;' styles.css
 grep -Fq 'gap: 0.5rem 2rem;' styles.css
 grep -Fq 'padding: 1rem 1.5rem;' styles.css
 grep -Fq 'text-align: center;' styles.css
+grep -Fq '<h1 class="projects-heading">Projects</h1>' projects.html
+grep -Fq '<div class="project-list">' projects.html
+test "$(grep -Fc '<article class="project-entry">' projects.html)" -eq 4
+test "$(grep -Fc '<div class="project-media"></div>' projects.html)" -eq 4
+test "$(grep -Fc '>View on GitHub</a>' projects.html)" -eq 4
+! grep -Fq 'class="project-grid"' projects.html
+grep -Fq '.projects-heading {' styles.css
+grep -Fq 'font-size: clamp(1.75rem, 5vw, 2.5rem);' styles.css
+grep -Fq '.project-list {' styles.css
+grep -Fq '.project-entry + .project-entry {' styles.css
+grep -Fq '.project-media:empty {' styles.css
+grep -Fq '.project-media img {' styles.css

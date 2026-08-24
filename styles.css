@@ -143,30 +143,47 @@ section {
   text-underline-offset: 0.3em;
 }
 
-.page-heading {
+.projects-heading {
   margin: 0 0 2rem;
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+.project-list {
+  max-width: 42rem;
 }
 
-.project-card {
-  padding: 1.5rem;
-  border: 1px solid rgb(255 255 255 / 0.35);
+.project-entry {
+  padding: 0 0 2rem;
+}
+
+.project-entry + .project-entry {
+  border-top: 1px solid rgb(255 255 255 / 0.35);
+  padding-top: 2rem;
+}
+
+.project-entry h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.project-entry p {
+  margin: 0.75rem 0;
+}
+
+.project-entry a {
+  color: #fef3c7;
+  font-weight: 700;
+}
+
+.project-media:empty {
+  display: none;
+}
+
+.project-media img {
+  display: block;
+  width: min(100%, 38rem);
+  margin-bottom: 1.25rem;
   border-radius: 0.75rem;
-  background: rgb(15 23 42 / 0.2);
-}
-
-.project-card h2 {
-  margin-top: 0;
-}
-
-.project-card p {
-  margin-bottom: 0;
 }
 
 .empty-state {
@@ -198,10 +215,6 @@ section {
     position: static;
     width: auto;
     margin: 0;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
   }
 
   .site-footer {
