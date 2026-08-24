@@ -12,6 +12,8 @@
 body {
   min-height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(135deg, #075985 0%, #0f766e 55%, #115e59 100%);
 }
 
@@ -19,7 +21,8 @@ body {
   width: min(100% - 2rem, 44rem);
   margin-right: auto;
   margin-left: max(2rem, calc((100% - 72rem) / 2));
-  padding: 5rem 0;
+  padding: 6rem 0 3rem;
+  flex: 1;
 }
 
 .hero {
@@ -117,16 +120,20 @@ section {
 
 .site-nav {
   position: fixed;
-  top: 1.25rem;
-  left: 1.5rem;
+  top: 0;
+  left: 0;
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1rem;
+  width: 100%;
+  gap: 0.5rem 2rem;
+  padding: 1rem 1.5rem;
+  background: rgb(13 148 136 / 0.55);
 }
 
 .site-nav a {
-  color: #f8fafc;
+  color: #fff;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 
@@ -168,10 +175,12 @@ section {
 }
 
 .site-footer {
-  width: min(100% - 2rem, 44rem);
-  margin: 0 0 2rem max(2rem, calc((100% - 72rem) / 2));
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;
   color: #ccfbf1;
   font-size: 0.875rem;
+  text-align: center;
 }
 
 @media (max-width: 30rem) {
@@ -187,7 +196,8 @@ section {
 
   .site-nav {
     position: static;
-    margin: 1rem;
+    width: auto;
+    margin: 0;
   }
 
   .project-grid {
@@ -195,7 +205,6 @@ section {
   }
 
   .site-footer {
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0;
   }
 }

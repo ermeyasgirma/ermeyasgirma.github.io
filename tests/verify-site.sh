@@ -87,3 +87,11 @@ grep -Fq 'https://ermeyasgirma.github.io/art.html' sitemap.xml
 grep -Fq '.site-nav {' styles.css
 grep -Fq '.project-grid {' styles.css
 grep -Fq '.site-footer {' styles.css
+grep -Fq 'flex-direction: column;' styles.css
+grep -Fq 'flex: 1;' styles.css
+grep -Fq 'width: 100%;' styles.css
+grep -Fq 'background: rgb(13 148 136 / 0.55);' styles.css
+grep -Fq 'font-size: 1.125rem;' styles.css
+grep -Fq 'gap: 0.5rem 2rem;' styles.css
+grep -Fq 'padding: 1rem 1.5rem;' styles.css
+grep -Fq 'text-align: center;' styles.css
