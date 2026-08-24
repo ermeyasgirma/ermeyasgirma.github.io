@@ -20,5 +20,11 @@ grep -Fq 'https://github.com/ermeyasgirma/jraft' index.html
 grep -Fq 'https://github.com/ermeyasgirma/chess-analysis-dashboard' index.html
 grep -Fq 'https://github.com/ermeyasgirma/Deliberative-Social-Media' index.html
 grep -Fq 'https://github.com/ermeyasgirma/JGAL' index.html
-grep -Fq 'https://github.com/ermeyasgirma/Encrypted-Chat-Server' index.html
-grep -Fq 'https://github.com/ermeyasgirma/search_command' index.html
+! grep -Fq 'https://github.com/ermeyasgirma/Encrypted-Chat-Server' index.html
+! grep -Fq 'https://github.com/ermeyasgirma/search_command' index.html
+grep -Fq 'GitHub: https://github.com/ermeyasgirma' index.html
+grep -Fq 'src="PXL_20250814_071235023.MP.jpeg"' index.html
+grep -Fq 'alt="Ermeyas Girma"' index.html
+test -f PXL_20250814_071235023.MP.jpeg
+grep -Fq 'linear-gradient' styles.css
+grep -Fq 'object-fit: cover' styles.css
