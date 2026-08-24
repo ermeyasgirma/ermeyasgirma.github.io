@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-grep -Fq '<title>Ermeyas Girma | Senior Software Engineer</title>' index.html
+grep -Fq '<title>Ermeyas Girma</title>' index.html
+grep -Fq '<meta property="og:title" content="Ermeyas Girma">' index.html
 grep -Fq 'https://github.com/ermeyasgirma' index.html
 grep -Fq 'https://www.linkedin.com/in/ermeyas-girma-4b7386199/' index.html
 grep -Fq 'application/ld+json' index.html
