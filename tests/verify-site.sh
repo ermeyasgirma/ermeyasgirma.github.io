@@ -113,6 +113,8 @@ grep -Fq '.project-media img {' styles.css
 test "$(grep -Fc '<div class="project-copy">' projects.html)" -eq 4
 grep -Fq 'grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);' styles.css
 grep -Fq 'align-items: start;' styles.css
+test -f images/projects/.gitkeep
+test -f images/art/.gitkeep
 python3 - <<'PY'
 from pathlib import Path
 
