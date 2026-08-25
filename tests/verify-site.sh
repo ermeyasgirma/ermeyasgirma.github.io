@@ -110,3 +110,12 @@ grep -Fq 'place-items: center;' styles.css
 grep -Fq 'background: rgb(15 23 42 / 0.25);' styles.css
 grep -Fq '.project-media img {' styles.css
 ! grep -Fq '<img' projects.html
+test "$(grep -Fc '<div class="project-copy">' projects.html)" -eq 4
+grep -Fq 'grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);' styles.css
+grep -Fq 'align-items: start;' styles.css
+python3 - <<'PY'
+from pathlib import Path
+
+mobile_css = Path("styles.css").read_text(encoding="utf-8").split("@media (max-width: 30rem)", 1)[1]
+assert ".project-entry {\n    grid-template-columns: 1fr;\n  }" in mobile_css
+PY
