@@ -85,7 +85,6 @@ grep -Fq 'Travel photographs coming soon.' art.html
 grep -Fq 'https://ermeyasgirma.github.io/projects.html' sitemap.xml
 grep -Fq 'https://ermeyasgirma.github.io/art.html' sitemap.xml
 grep -Fq '.site-nav {' styles.css
-grep -Fq '.project-grid {' styles.css
 grep -Fq '.site-footer {' styles.css
 grep -Fq 'flex-direction: column;' styles.css
 grep -Fq 'flex: 1;' styles.css
@@ -98,12 +97,16 @@ grep -Fq 'text-align: center;' styles.css
 grep -Fq '<h1 class="projects-heading">Projects</h1>' projects.html
 grep -Fq '<div class="project-list">' projects.html
 test "$(grep -Fc '<article class="project-entry">' projects.html)" -eq 4
-test "$(grep -Fc '<div class="project-media"></div>' projects.html)" -eq 4
+test "$(grep -Fc '<div class="project-media">Project image coming soon</div>' projects.html)" -eq 4
 test "$(grep -Fc '>View on GitHub</a>' projects.html)" -eq 4
 ! grep -Fq 'class="project-grid"' projects.html
 grep -Fq '.projects-heading {' styles.css
 grep -Fq 'font-size: clamp(1.75rem, 5vw, 2.5rem);' styles.css
 grep -Fq '.project-list {' styles.css
 grep -Fq '.project-entry + .project-entry {' styles.css
-grep -Fq '.project-media:empty {' styles.css
+grep -Fq 'aspect-ratio: 16 / 9;' styles.css
+grep -Fq 'border: 2px dashed rgb(255 255 255 / 0.5);' styles.css
+grep -Fq 'place-items: center;' styles.css
+grep -Fq 'background: rgb(15 23 42 / 0.25);' styles.css
 grep -Fq '.project-media img {' styles.css
+! grep -Fq '<img' projects.html
