@@ -156,7 +156,7 @@ section {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
   padding: 0 0 2rem;
 }
 
@@ -198,7 +198,9 @@ section {
 .project-media {
   display: grid;
   place-items: center;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: auto;
+  min-height: 15rem;
+  align-self: stretch;
   overflow: hidden;
   border: 2px dashed rgb(255 255 255 / 0.5);
   border-radius: 0.75rem;

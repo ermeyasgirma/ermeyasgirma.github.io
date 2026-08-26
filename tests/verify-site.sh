@@ -136,6 +136,10 @@ grep -Fq '.project-details {' styles.css
 grep -Fq 'font-size: 1.875rem;' styles.css
 ! grep -Fq 'transform: scale(1.22);' styles.css
 grep -Fq 'overflow: hidden;' styles.css
+grep -Fq 'align-items: stretch;' styles.css
+grep -Fq 'aspect-ratio: auto;' styles.css
+grep -Fq 'min-height: 15rem;' styles.css
+grep -Fq 'align-self: stretch;' styles.css
 ! grep -Fq 'min-height: 12rem;' styles.css
 ! grep -Fq 'position: absolute;' styles.css
 test -f images/projects/.gitkeep
