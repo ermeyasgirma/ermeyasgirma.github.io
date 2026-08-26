@@ -117,12 +117,22 @@ for image in images/projects/raft.png images/projects/stockfish.webp images/proj
   test -s "$image"
 done
 test "$(grep -Fc '<div class="project-copy">' projects.html)" -eq 4
+test "$(grep -Fc '<ul class="project-details">' projects.html)" -eq 4
+test "$(grep -Fc '<li>' projects.html)" -eq 8
+grep -Fq 'multithreaded Java implementation of the Raft consensus algorithm' projects.html
+grep -Fq 'Python FastAPI and SQLite backend with a React, TypeScript, and Vite frontend' projects.html
+grep -Fq 'React, ASP.NET Core, Entity Framework and SQL Server' projects.html
+grep -Fq 'rank, roulette, Boltzmann, and tournament selection strategies' projects.html
 grep -Fq 'grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);' styles.css
 grep -Fq 'align-items: start;' styles.css
 grep -Fq '.project-copy {' styles.css
 grep -Fq 'align-self: stretch;' styles.css
 grep -Fq '.project-copy a {' styles.css
 grep -Fq 'margin-top: auto;' styles.css
+grep -Fq '.project-details {' styles.css
+grep -Fq '.project-entry:nth-child(-n + 2) .project-media img {' styles.css
+grep -Fq 'transform: scale(1.22);' styles.css
+grep -Fq 'overflow: hidden;' styles.css
 test -f images/projects/.gitkeep
 test -f images/art/.gitkeep
 python3 - <<'PY'
