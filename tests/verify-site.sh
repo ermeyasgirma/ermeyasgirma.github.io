@@ -97,7 +97,11 @@ grep -Fq 'text-align: center;' styles.css
 grep -Fq '<h1 class="projects-heading">Projects</h1>' projects.html
 grep -Fq '<div class="project-list">' projects.html
 test "$(grep -Fc '<article class="project-entry">' projects.html)" -eq 4
-test "$(grep -Fc '<div class="project-media">Project image coming soon</div>' projects.html)" -eq 4
+grep -Fq '<img src="images/projects/raft.png" alt="Raft consensus algorithm visualization" loading="lazy" decoding="async">' projects.html
+grep -Fq '<img src="images/projects/stockfish.webp" alt="Chess analysis with Stockfish" loading="lazy" decoding="async">' projects.html
+grep -Fq '<img src="images/projects/deliberative.avif" alt="Deliberative Social Media interface" loading="lazy" decoding="async">' projects.html
+grep -Fq '<img src="images/projects/genetics.jpg" alt="Genetic algorithm visualization" loading="lazy" decoding="async">' projects.html
+! grep -Fq 'Project image coming soon' projects.html
 test "$(grep -Fc '>View on GitHub</a>' projects.html)" -eq 4
 ! grep -Fq 'class="project-grid"' projects.html
 grep -Fq '.projects-heading {' styles.css
@@ -109,7 +113,9 @@ grep -Fq 'border: 2px dashed rgb(255 255 255 / 0.5);' styles.css
 grep -Fq 'place-items: center;' styles.css
 grep -Fq 'background: rgb(15 23 42 / 0.25);' styles.css
 grep -Fq '.project-media img {' styles.css
-! grep -Fq '<img' projects.html
+for image in images/projects/raft.png images/projects/stockfish.webp images/projects/deliberative.avif images/projects/genetics.jpg; do
+  test -s "$image"
+done
 test "$(grep -Fc '<div class="project-copy">' projects.html)" -eq 4
 grep -Fq 'grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);' styles.css
 grep -Fq 'align-items: start;' styles.css
