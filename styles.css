@@ -177,7 +177,7 @@ section {
 .project-copy {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  align-self: stretch;
 }
 
 .project-copy a {

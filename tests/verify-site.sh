@@ -120,7 +120,7 @@ test "$(grep -Fc '<div class="project-copy">' projects.html)" -eq 4
 grep -Fq 'grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);' styles.css
 grep -Fq 'align-items: start;' styles.css
 grep -Fq '.project-copy {' styles.css
-grep -Fq 'min-height: 100%;' styles.css
+grep -Fq 'align-self: stretch;' styles.css
 grep -Fq '.project-copy a {' styles.css
 grep -Fq 'margin-top: auto;' styles.css
 test -f images/projects/.gitkeep
