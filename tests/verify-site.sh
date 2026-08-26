@@ -117,8 +117,12 @@ for image in images/projects/raft.png images/projects/stockfish.webp images/proj
   test -s "$image"
 done
 test "$(grep -Fc '<div class="project-copy">' projects.html)" -eq 4
+test "$(grep -Fc '<div class="project-summary">' projects.html)" -eq 4
 test "$(grep -Fc '<ul class="project-details">' projects.html)" -eq 4
+test "$(grep -Fc '          </div>' projects.html)" -ge 4
+test "$(grep -Fc '          <ul class="project-details">' projects.html)" -eq 4
 test "$(grep -Fc '<li>' projects.html)" -eq 8
+grep -Fq '<h2>Chess Analysis Dashboard</h2>' projects.html
 grep -Fq 'multithreaded Java implementation of the Raft consensus algorithm' projects.html
 grep -Fq 'Python FastAPI and SQLite backend with a React, TypeScript, and Vite frontend' projects.html
 grep -Fq 'React, ASP.NET Core, Entity Framework and SQL Server' projects.html
@@ -130,14 +134,20 @@ grep -Fq 'align-self: stretch;' styles.css
 grep -Fq '.project-copy a {' styles.css
 grep -Fq 'margin-top: auto;' styles.css
 grep -Fq '.project-details {' styles.css
-grep -Fq '.project-entry:nth-child(-n + 2) .project-media img {' styles.css
-grep -Fq 'transform: scale(1.22);' styles.css
+grep -Fq '.project-summary {' styles.css
+grep -Fq 'font-size: 1.875rem;' styles.css
+! grep -Fq 'transform: scale(1.22);' styles.css
 grep -Fq 'overflow: hidden;' styles.css
+grep -Fq 'align-items: stretch;' styles.css
+grep -Fq 'position: relative;' styles.css
+grep -Fq 'min-height: 12rem;' styles.css
+grep -Fq 'position: absolute;' styles.css
+grep -Fq 'inset: 0;' styles.css
 test -f images/projects/.gitkeep
 test -f images/art/.gitkeep
 python3 - <<'PY'
 from pathlib import Path
 
 mobile_css = Path("styles.css").read_text(encoding="utf-8").split("@media (max-width: 30rem)", 1)[1]
-assert ".project-entry {\n    grid-template-columns: 1fr;\n  }" in mobile_css
+assert ".project-summary {\n    grid-template-columns: 1fr;\n  }" in mobile_css
 PY
