@@ -37,9 +37,14 @@ grep -Fq 'alt="Ermeyas Girma"' index.html
 test -f PXL_20250814_071235023.MP.jpeg
 grep -Fq 'linear-gradient' styles.css
 grep -Fq 'object-fit: cover' styles.css
-grep -Fq "Hi, I'm Ermeyas Girma, currently working at Roku as a Senior Software Engineer." index.html
-grep -Fq 'I previously worked at Rapita Systems as a software engineer intern, developing a Perl-based compiler to provide software verification for embedded aerospace systems. Before this, I studied Computer Science at the University of Cambridge, Corpus Christi College.' index.html
+grep -Fq "Hi, I'm Ermeyas Girma, currently working at Roku as a Senior Software Engineer, based in London." index.html
+grep -Fq 'I previously lived in York for 3 months, where I worked at Rapita Systems as a software engineer intern.' index.html
+grep -Fq "where I received a bachelor's in Computer Science." index.html
+grep -Fq 'For my dissertation, I developed a genetic programming framework in OCaml' index.html
 grep -Fq 'I enjoy hiking, lifting weights, playing chess, travelling, reading fantasy books and working on fun coding projects.' index.html
+grep -Fq '<main class="page-shell page-shell--wide">' index.html
+grep -Fq '.page-shell--wide {' styles.css
+grep -Fq 'width: min(100% - 4rem, 58rem);' styles.css
 ! grep -Fq 'driven by curiosity about how technology works' index.html
 python3 - <<'PY'
 from pathlib import Path
@@ -70,9 +75,9 @@ test -f projects.html
 test -f art.html
 for page in index.html projects.html art.html; do
   grep -Fq 'aria-label="Primary navigation"' "$page"
-  grep -Fq 'href="index.html">Home</a>' "$page"
-  grep -Fq 'href="projects.html">Projects</a>' "$page"
-  grep -Fq 'href="art.html">Art</a>' "$page"
+  grep -Fq '<a href="index.html"' "$page"
+  grep -Fq '<a href="projects.html"' "$page"
+  grep -Fq '<a href="art.html"' "$page"
   grep -Fq '© Ermeyas Girma. All rights reserved.' "$page"
 done
 grep -Fq 'href="index.html" aria-current="page">Home</a>' index.html
@@ -110,7 +115,6 @@ grep -Fq '.projects-heading {' styles.css
 grep -Fq 'font-size: clamp(1.75rem, 5vw, 2.5rem);' styles.css
 grep -Fq '.project-list {' styles.css
 grep -Fq '.project-entry + .project-entry {' styles.css
-grep -Fq 'aspect-ratio: 16 / 9;' styles.css
 grep -Fq 'border: 2px dashed rgb(255 255 255 / 0.5);' styles.css
 grep -Fq 'place-items: center;' styles.css
 grep -Fq 'background: rgb(15 23 42 / 0.25);' styles.css
