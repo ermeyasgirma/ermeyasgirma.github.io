@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 600" font-family="system-ui, sans-serif" font-size="20" text-anchor="middle">
+  <rect width="360" height="600" fill="#0f172a"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ccfbf1"/></marker></defs>
+  <g fill="#0f766e" stroke="#5eead4" stroke-width="2">
+    <rect x="70" y="40" width="220" height="52" rx="10"/>
+    <rect x="70" y="108" width="220" height="52" rx="10"/>
+    <rect x="70" y="176" width="220" height="52" rx="10"/>
+  </g>
+  <g fill="#f8fafc">
+    <text x="180" y="73">Network model</text>
+    <text x="180" y="141">Traffic model</text>
+    <text x="180" y="209">Delay vs throughput</text>
+  </g>
+  <g stroke="#ccfbf1" stroke-width="2" marker-end="url(#a)">
+    <path d="M180 230V280"/><path d="M180 362V412"/>
+  </g>
+  <ellipse cx="180" cy="322" rx="140" ry="38" fill="#075985" stroke="#7dd3fc" stroke-width="2"/>
+  <text x="180" y="329" fill="#f8fafc" font-weight="700">Genetic algorithm</text>
+  <rect x="30" y="418" width="300" height="110" rx="10" fill="#fef3c7"/>
+  <text x="180" y="458" fill="#0f172a" font-weight="700">Congestion-control</text>
+  <text x="180" y="484" fill="#0f172a" font-weight="700">rule table</text>
+  <text x="180" y="512" fill="#334155" font-size="17">window ← m·window + b</text>
+</svg>

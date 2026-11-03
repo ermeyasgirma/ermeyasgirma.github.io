@@ -32,15 +32,15 @@ test -f ermeyas_resume.pdf
 ! grep -Fq 'Hello, I' index.html
 ! grep -Fq '<h1>Ermeyas Girma</h1>' index.html
 ! grep -Fq 'Senior Software Engineer</p>' index.html
-grep -Fq 'src="PXL_20250814_071235023.MP.jpeg"' index.html
+grep -Fq 'src="images/portrait.jpg"' index.html
 grep -Fq 'alt="Ermeyas Girma"' index.html
-test -f PXL_20250814_071235023.MP.jpeg
+test -f images/portrait.jpg
+test "$(stat -c %s images/portrait.jpg)" -lt 300000
 grep -Fq 'linear-gradient' styles.css
 grep -Fq 'object-fit: cover' styles.css
 grep -Fq "Hi, I'm Ermeyas Girma, currently working at Roku as a Senior Software Engineer, based in London." index.html
 grep -Fq 'I previously lived in York for 3 months, where I worked at Rapita Systems as a software engineer intern.' index.html
 grep -Fq "where I received a bachelor's in Computer Science." index.html
-grep -Fq 'For my dissertation, I developed a genetic programming framework in OCaml' index.html
 grep -Fq 'I enjoy hiking, lifting weights, playing chess, travelling, reading fantasy books and working on fun coding projects.' index.html
 grep -Fq '<main class="page-shell page-shell--wide">' index.html
 grep -Fq '.page-shell--wide {' styles.css
@@ -88,7 +88,10 @@ grep -Fq 'Chess.com game-analysis dashboard.' projects.html
 grep -Fq 'Cambridge second-year group project for a deliberative social-media platform.' projects.html
 grep -Fq 'Java genetic-algorithm library.' projects.html
 grep -Fq 'Travel photographs coming soon.' art.html
-! grep -Fq '<img' art.html
+grep -Fq '<div class="gallery">' art.html
+grep -Fq '<figcaption>' art.html
+grep -Fq '.gallery figcaption {' styles.css
+grep -Fq 'https://github.com/ermeyasgirma/tcp-ex-machina-ocaml' projects.html
 grep -Fq 'https://ermeyasgirma.github.io/projects.html' sitemap.xml
 grep -Fq 'https://ermeyasgirma.github.io/art.html' sitemap.xml
 grep -Fq '.site-nav {' styles.css
@@ -103,13 +106,13 @@ grep -Fq 'padding: 1rem 1.5rem;' styles.css
 grep -Fq 'text-align: center;' styles.css
 grep -Fq '<h1 class="projects-heading">Projects</h1>' projects.html
 grep -Fq '<div class="project-list">' projects.html
-test "$(grep -Fc '<article class="project-entry">' projects.html)" -eq 4
+test "$(grep -Fc '<article class="project-entry">' projects.html)" -eq 5
 grep -Fq '<img src="images/projects/raft.png" alt="Raft consensus algorithm visualization" loading="lazy" decoding="async">' projects.html
 grep -Fq '<img src="images/projects/stockfish.webp" alt="Chess analysis with Stockfish" loading="lazy" decoding="async">' projects.html
 grep -Fq '<img src="images/projects/deliberative.avif" alt="Deliberative Social Media interface" loading="lazy" decoding="async">' projects.html
 grep -Fq '<img src="images/projects/genetics.jpg" alt="Genetic algorithm visualization" loading="lazy" decoding="async">' projects.html
 ! grep -Fq 'Project image coming soon' projects.html
-test "$(grep -Fc '>View on GitHub</a>' projects.html)" -eq 4
+test "$(grep -Fc '>View on GitHub</a>' projects.html)" -eq 5
 ! grep -Fq 'class="project-grid"' projects.html
 grep -Fq '.projects-heading {' styles.css
 grep -Fq 'font-size: clamp(1.75rem, 5vw, 2.5rem);' styles.css
@@ -119,13 +122,13 @@ grep -Fq 'border: 2px dashed rgb(255 255 255 / 0.5);' styles.css
 grep -Fq 'place-items: center;' styles.css
 grep -Fq 'background: rgb(15 23 42 / 0.25);' styles.css
 grep -Fq '.project-media img {' styles.css
-for image in images/projects/raft.png images/projects/stockfish.webp images/projects/deliberative.avif images/projects/genetics.jpg; do
+for image in images/projects/tcp-ex-machina.svg images/projects/raft.png images/projects/stockfish.webp images/projects/deliberative.avif images/projects/genetics.jpg; do
   test -s "$image"
 done
-test "$(grep -Fc '<div class="project-copy">' projects.html)" -eq 4
+test "$(grep -Fc '<div class="project-copy">' projects.html)" -eq 5
 ! grep -Fq '<div class="project-summary">' projects.html
-test "$(grep -Fc '<ul class="project-details">' projects.html)" -eq 4
-test "$(grep -Fc '<li>' projects.html)" -eq 8
+test "$(grep -Fc '<ul class="project-details">' projects.html)" -eq 5
+test "$(grep -Fc '<li>' projects.html)" -eq 10
 grep -Fq '<h2>Chess Analysis Dashboard</h2>' projects.html
 grep -Fq 'multithreaded Java implementation of the Raft consensus algorithm' projects.html
 grep -Fq 'Python FastAPI and SQLite backend with a React, TypeScript, and Vite frontend' projects.html

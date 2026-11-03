@@ -44,6 +44,7 @@ body {
 
 .portrait {
   width: clamp(9rem, 22vw, 13rem);
+  height: auto;
   aspect-ratio: 1;
   border: 4px solid rgb(255 255 255 / 0.7);
   border-radius: 50%;
@@ -218,6 +219,28 @@ section {
   height: 100%;
   border-radius: inherit;
   object-fit: cover;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 2rem;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.gallery figcaption {
+  margin-top: 0.5rem;
+  color: #ccfbf1;
+  font-size: 0.95rem;
 }
 
 .empty-state {
