@@ -23,10 +23,10 @@
           </div>
           <div class="project-copy">
             <h2>TCP ex Machina in OCaml</h2>
-            <p>Cambridge Part II dissertation: evolving TCP congestion-control algorithms with a genetic algorithm.</p>
+            <p>Cambridge Part II dissertation: a genetic algorithm framework, written in OCaml, that generates TCP congestion-control algorithms tailored to the needs of high-performance networking applications.</p>
             <ul class="project-details">
-              <li>Given assumptions about the network and a delay vs. throughput goal, a genetic algorithm evolves a rule table telling a TCP sender how to adjust its congestion window, in the style of MIT's Remy.</li>
-              <li>Written in OCaml with dune, including a bursty-traffic dumbbell network simulator and tournament, roulette, hybrid and steady-state selection strategies.</li>
+              <li>Inspired by MIT's Remy: from an input model of the target network and an application's throughput and latency requirements, the framework evolves congestion-control schemes offline that integrate into TCP/IP stacks such as MirageOS.</li>
+              <li>Achieved up to 2.2&times; lower queueing delay for latency-sensitive applications and 1.7&times; higher throughput for bandwidth-heavy ones compared with MirageOS's standard TCP, beating established algorithms such as TCP Vegas, NewReno and XCP on the metric each application prioritised.</li>
             </ul>
             <a href="https://github.com/ermeyasgirma/tcp-ex-machina-ocaml">View on GitHub</a>
           </div>
