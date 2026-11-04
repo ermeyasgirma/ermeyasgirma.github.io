@@ -1,23 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 600" font-family="system-ui, sans-serif" font-size="20" text-anchor="middle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 600" font-family="system-ui, sans-serif" font-size="13">
   <rect width="360" height="600" fill="#0f172a"/>
-  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ccfbf1"/></marker></defs>
-  <g fill="#0f766e" stroke="#5eead4" stroke-width="2">
-    <rect x="70" y="40" width="220" height="52" rx="10"/>
-    <rect x="70" y="108" width="220" height="52" rx="10"/>
-    <rect x="70" y="176" width="220" height="52" rx="10"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#fef3c7"/></marker></defs>
+  <text x="180" y="30" fill="#f8fafc" font-size="16" font-weight="700" text-anchor="middle">Throughput vs queueing delay</text>
+  <g stroke="#94a3b8" stroke-width="1.5" fill="none"><path d="M52 50V440H332"/></g>
+  <g fill="#cbd5e1" font-size="12" text-anchor="middle">
+    <path d="M52.0 440v5" stroke="#94a3b8"/><text x="52.0" y="460">32</text>
+    <path d="M145.3 440v5" stroke="#94a3b8"/><text x="145.3" y="460">16</text>
+    <path d="M238.7 440v5" stroke="#94a3b8"/><text x="238.7" y="460">8</text>
+    <path d="M332.0 440v5" stroke="#94a3b8"/><text x="332.0" y="460">4</text>
   </g>
-  <g fill="#f8fafc">
-    <text x="180" y="73">Network model</text>
-    <text x="180" y="141">Traffic model</text>
-    <text x="180" y="209">Delay vs throughput</text>
+  <g fill="#cbd5e1" font-size="12" text-anchor="end">
+    <path d="M47 422.7h5" stroke="#94a3b8"/><text x="43" y="426.7">0.25</text>
+    <path d="M47 336.4h5" stroke="#94a3b8"/><text x="43" y="340.4">0.50</text>
+    <path d="M47 250.0h5" stroke="#94a3b8"/><text x="43" y="254.0">0.75</text>
+    <path d="M47 163.6h5" stroke="#94a3b8"/><text x="43" y="167.6">1.00</text>
+    <path d="M47 77.3h5" stroke="#94a3b8"/><text x="43" y="81.3">1.25</text>
   </g>
-  <g stroke="#ccfbf1" stroke-width="2" marker-end="url(#a)">
-    <path d="M180 230V280"/><path d="M180 362V412"/>
-  </g>
-  <ellipse cx="180" cy="322" rx="140" ry="38" fill="#075985" stroke="#7dd3fc" stroke-width="2"/>
-  <text x="180" y="329" fill="#f8fafc" font-weight="700">Genetic algorithm</text>
-  <rect x="30" y="418" width="300" height="110" rx="10" fill="#fef3c7"/>
-  <text x="180" y="458" fill="#0f172a" font-weight="700">Congestion-control</text>
-  <text x="180" y="484" fill="#0f172a" font-weight="700">rule table</text>
-  <text x="180" y="512" fill="#334155" font-size="17">window ← m·window + b</text>
+  <text x="192" y="482" fill="#e2e8f0" text-anchor="middle">Queueing delay (ms)</text>
+  <text transform="translate(16 245) rotate(-90)" fill="#e2e8f0" text-anchor="middle">Throughput (Mbps)</text>
+  <ellipse cx="270" cy="130" rx="46" ry="26" fill="none" stroke="#fef3c7" stroke-dasharray="3 3"/>
+  <path d="M245 150L292 108" stroke="#fef3c7" stroke-width="2" marker-end="url(#a)"/>
+  <text x="262" y="160" fill="#fef3c7" font-style="italic" font-weight="700">Better</text>
+  <path d="M77.3 100.8L160.3 286.3L272.3 351.6" stroke="#5eead4" stroke-width="2" fill="none"/>
+  <circle cx="140.0" cy="227.9" r="6" fill="#86efac"/>
+  <circle cx="153.9" cy="404.4" r="6" fill="#fca5a5"/>
+  <circle cx="192.2" cy="361.9" r="6" fill="#fca5a5"/>
+  <circle cx="223.9" cy="404.4" r="6" fill="#f0abfc"/>
+  <circle cx="77.3" cy="100.8" r="7" fill="#0f172a" stroke="#5eead4" stroke-width="3"/>
+  <circle cx="160.3" cy="286.3" r="7" fill="#0f172a" stroke="#5eead4" stroke-width="3"/>
+  <circle cx="272.3" cy="351.6" r="7" fill="#0f172a" stroke="#5eead4" stroke-width="3"/>
+  <text x="150.0" y="231.9" fill="#86efac" text-anchor="start">XCP</text>
+  <text x="153.9" y="426.4" fill="#fca5a5" text-anchor="middle">NewReno</text>
+  <text x="192.2" y="349.9" fill="#fca5a5" text-anchor="middle">Tahoe</text>
+  <text x="223.9" y="426.4" fill="#f0abfc" text-anchor="middle">Vegas</text>
+  <text x="89.3" y="90.8" fill="#5eead4" font-weight="700" text-anchor="start">δ = 0.1</text>
+  <text x="148.3" y="290.3" fill="#5eead4" font-weight="700" text-anchor="end">δ = 1</text>
+  <text x="272.3" y="337.6" fill="#5eead4" font-weight="700" text-anchor="middle">δ = 10</text>
+  <circle cx="40" cy="512" r="6" fill="#0f172a" stroke="#5eead4" stroke-width="3"/>
+  <text x="54" y="517" fill="#5eead4" font-weight="700">TCP ex Machina OCaml</text>
+  <text x="54" y="535" fill="#cbd5e1" font-size="11.5">δ = how much delay matters vs throughput</text>
+  <text x="180" y="568" fill="#94a3b8" font-size="11" text-anchor="middle" font-style="italic">16 senders, 5–15 Mbps link, 50–75 ms delay</text>
+  <text x="180" y="584" fill="#94a3b8" font-size="11" text-anchor="middle" font-style="italic">Results from my Part II dissertation</text>
 </svg>
